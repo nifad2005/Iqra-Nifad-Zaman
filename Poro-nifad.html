@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>নিফাদ জামান — পড়ার জগৎ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+    <style>
+        /* ----- রিসেট ও বেসিক ----- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #faf9f8;
+            color: #1c1c1e;
+            line-height: 1.7;
+            padding: 2.5rem 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* ----- টাইপোগ্রাফি ও স্পেস ----- */
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            margin-bottom: 0.2rem;
+            background: linear-gradient(135deg, #1e1e1e 0%, #3a3a3a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subhead {
+            font-size: 1.15rem;
+            font-weight: 350;
+            color: #5a5a5e;
+            border-bottom: 2px solid #eae8e6;
+            padding-bottom: 1.8rem;
+            margin-bottom: 2.8rem;
+            letter-spacing: -0.01em;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-top: 3.5rem;
+            margin-bottom: 1.8rem;
+            letter-spacing: -0.02em;
+            display: inline-block;
+            border-bottom: 4px solid #1c1c1e;
+            padding-bottom: 0.3rem;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.1rem;
+            letter-spacing: -0.01em;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            font-weight: 380;
+            color: #2c2c2e;
+        }
+
+        .essay p:first-of-type {
+            font-size: 1.05rem;
+        }
+
+        /* ----- বইয়ের গ্রিড (বিশেষ) ----- */
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            margin: 1.5rem 0 1rem;
+        }
+
+        .book-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.8rem 1.5rem 1.5rem;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02), 0 1px 4px rgba(0, 0, 0, 0.03);
+            border: 1px solid #efedeb;
+            transition: transform 0.2s ease, box-shadow 0.25s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .book-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.04);
+            border-color: #dddcd9;
+        }
+
+        .book-badge {
+            align-self: flex-start;
+            background: #1c1c1e;
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            background: #2b2b2e;
+        }
+
+        .book-cover-icon {
+            font-size: 2.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .book-author {
+            font-size: 0.95rem;
+            font-weight: 450;
+            color: #6b6b6f;
+            margin-bottom: 0.6rem;
+        }
+
+        .book-desc {
+            font-size: 0.95rem;
+            color: #3a3a3d;
+            margin-bottom: 0;
+            flex: 1;
+        }
+
+        .must-read-tag {
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #1c1c1e;
+            background: #f0eeeb;
+            padding: 0.2rem 0.8rem;
+            border-radius: 40px;
+            align-self: flex-start;
+            letter-spacing: 0.01em;
+        }
+
+        /* ----- ফুটার ----- */
+        footer {
+            margin-top: 4.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e3e1de;
+            font-size: 0.95rem;
+            color: #7a7a7e;
+            text-align: center;
+        }
+
+        /* ----- রেসপন্সিভ ----- */
+        @media (max-width: 640px) {
+            body {
+                padding: 1.5rem 1rem;
+            }
+
+            h1 {
+                font-size: 2.4rem;
+            }
+
+            .subhead {
+                font-size: 1rem;
+                padding-bottom: 1.2rem;
+                margin-bottom: 2rem;
+            }
+
+            h2 {
+                font-size: 1.6rem;
+                margin-top: 2.5rem;
+            }
+
+            .book-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+
+            .book-card {
+                padding: 1.5rem 1.2rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .book-cover-icon {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== হেডার ===== -->
+    <header>
+        <h1>পড়ো নিফাদ জামান</h1>
+        <div class="subhead">
+            পড়া মানে চোখ বোলানো নয় — মনকে বসিয়ে রাখা
+        </div>
+    </header>
+
+    <!-- ===== বই পড়া সম্পর্কে বক্তব্য ===== -->
+    <section class="essay">
+        <h2>আমার বক্তব্য</h2>
+        <p>
+            বই আমার কাছে সময়ের সাথে লুকোচুরি খেলার মতো। প্রতিটি পাতা যেন এক টুকরো
+            আলাদা জগৎ, যেখানে ঢুকলে নিজের চেনা চিন্তাগুলোকে নতুন করে সাজাতে হয়।
+            আমি মনে করি, ভালো বই পড়া মানে নিজের মননের সীমানা সরিয়ে নেওয়া —
+            আরও গভীরে যাওয়া, আরও প্রশ্ন করা।
+        </p>
+        <p>
+            সেই বইগুলোই আমার কাছে সবচেয়ে মূল্যবান, যেগুলো আমাকে একটু অস্বস্তিতে
+            ফেলে, আমাকে ভাবতে বাধ্য করে। যখন কোনো লাইন বারবার পড়তে ইচ্ছে করে,
+            তখন বুঝি — এই বই আমার জন্য লেখা। নিচের চারটি বই আমার জীবনে আলাদা
+            জায়গা করে নিয়েছে। এগুলো প্রতিটি মানুষেরই পড়া উচিত, কারণ এগুলো
+            শুধু তথ্য দেয় না — এগুলো দৃষ্টিভঙ্গি বদলে দেয়।
+        </p>
+    </section>
+
+    <!-- ===== সাজেস্ট করা বই (অবশ্যপাঠ্য) ===== -->
+    <section>
+        <h2>📚 অবশ্যই পড়তে হবে</h2>
+        <div class="book-grid">
+
+            <!-- ১. Mindset -->
+            <div class="book-card">
+                <span class="book-badge">⭐ গুরুত্বপূর্ণ</span>
+                <div class="book-cover-icon">🧠</div>
+                <h3>Mindset</h3>
+                <div class="book-author">Carol S. Dweck</div>
+                <p class="book-desc">
+                    স্থির মানসিকতা বনাম উন্নয়নশীল মানসিকতা — এই বই আপনাকে শেখায় কীভাবে
+                    নিজের সম্ভাবনাকে আনলক করতে হয়। প্রতিটি চ্যালেঞ্জকে নতুন করে দেখার
+                    শিক্ষা দেয় এই বই।
+                </p>
+                <span class="must-read-tag">অবশ্যই পড়ুন</span>
+            </div>
+
+            <!-- ২. Rich Dad Poor Dad -->
+            <div class="book-card">
+                <span class="book-badge">⭐ গুরুত্বপূর্ণ</span>
+                <div class="book-cover-icon">💰</div>
+                <h3>Rich Dad Poor Dad</h3>
+                <div class="book-author">Robert T. Kiyosaki</div>
+                <p class="book-desc">
+                    সম্পদ সৃষ্টির মৌলিক ধারণা। এই বই শেখায় কীভাবে অর্থকে আপনার জন্য
+                    কাজে লাগাতে হয়, শুধু অর্থের জন্য কাজ না করে। আর্থিক সাক্ষরতার
+                    এক অনন্য পাঠ।
+                </p>
+                <span class="must-read-tag">অবশ্যই পড়ুন</span>
+            </div>
+
+            <!-- ৩. Start With Why -->
+            <div class="book-card">
+                <span class="book-badge">⭐ গুরুত্বপূর্ণ</span>
+                <div class="book-cover-icon">🎯</div>
+                <h3>Start With Why</h3>
+                <div class="book-author">Simon Sinek</div>
+                <p class="book-desc">
+                    কেন আপনি যা করেন তা করেন? এই বইটি নেতৃত্ব ও অনুপ্রেরণার মূলমন্ত্র
+                    তুলে ধরে। যে কোনো কাজের 'কেন' খুঁজে বের করলে সাফল্য নিজেই চলে আসে।
+                </p>
+                <span class="must-read-tag">অবশ্যই পড়ুন</span>
+            </div>
+
+            <!-- ৪. You Can Win -->
+            <div class="book-card">
+                <span class="book-badge">⭐ গুরুত্বপূর্ণ</span>
+                <div class="book-cover-icon">🏆</div>
+                <h3>You Can Win</h3>
+                <div class="book-author">Shiv Khera</div>
+                <p class="book-desc">
+                    আত্মবিশ্বাস, ইতিবাচক মনোভাব ও সাফল্যের সূত্র। এটি শুধু একটি বই নয়,
+                    বরং জীবন বদলে দেওয়ার এক প্র্যাকটিক্যাল গাইড। প্রতিটি অধ্যায়ে
+                    নতুন প্রেরণা।
+                </p>
+                <span class="must-read-tag">অবশ্যই পড়ুন</span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== ফুটার ===== -->
+    <footer>
+        <p>
+            © ২০২৬ — নিফাদ জামান &bull; ভালো বই পড়ুন, ভালো মানুষ হোন
+        </p>
+    </footer>
+
+</body>
+</html>
